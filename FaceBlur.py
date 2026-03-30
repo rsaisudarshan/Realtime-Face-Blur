@@ -14,4 +14,7 @@ while True:
             imgBlur = cv.blur(imgCrop,(35,35))
             img[y:y+h,x:x+w]=imgBlur
     cv.imshow('Face Blur', img)
-    cv.waitKey(1)
+    if cv.waitKey(1) & 0xFF == ord('q'):
+        break
+cap.release()
+cv.destroyAllWindows()
